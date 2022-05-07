@@ -1,4 +1,4 @@
-const { APP_PORT } = require('./app/config/config.default')
+const { server } = require('./app/config/config.default')
 import run from './app';
 
-run(APP_PORT);
+run(server.APP_PORT);

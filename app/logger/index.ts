@@ -1,14 +1,6 @@
 import { configure, getLogger } from 'log4js';
+const { log } = require('../config/config.default')
 
-configure({
-    appenders: {
-        error: { type: "file", filename: "./app/consoleLog/error.log", },
-        access: { type: "file", filename: "./app/consoleLog/access.log" }
-    },
-    categories: {
-        default: { appenders: ["error"], level: "error" },
-        access: { appenders: ["access"], level: "info" }
-    }
-});
+configure(log);
 export const accessLogger = getLogger('access');
 export default getLogger()
