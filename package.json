@@ -1,0 +1,34 @@
+{
+  "name": "koa-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "ts-node main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/koa": "^2.13.4",
+    "@types/koa-router": "^7.4.4",
+    "dotenv": "^16.0.0",
+    "koa": "^2.13.4",
+    "koa-router": "^10.1.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.5.0",
+    "@types/supertest": "^2.0.12",
+    "jest": "^28.1.0",
+    "supertest": "^6.2.3",
+    "ts-jest": "^28.0.1",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  }
+}
