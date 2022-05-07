@@ -1,6 +1,7 @@
 import { configure, getLogger } from 'log4js';
-const { log } = require('../config/config.default')
+import config from '../config/config.default';
 
-configure(log);
+configure(config.log);
+export const sqlLogger = getLogger('sql');
 export const accessLogger = getLogger('access');
 export default getLogger()

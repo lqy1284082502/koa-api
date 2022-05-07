@@ -1,4 +1,6 @@
-const { server } = require('./app/config/config.default')
+require('dotenv').config()
+import config  from './app/config/config.default'
 import run from './app';
 
-run(server.APP_PORT);
+
+run(config.server.APP_PORT);
