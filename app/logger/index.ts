@@ -2,11 +2,11 @@ import { configure, getLogger } from 'log4js';
 
 configure({
     appenders: {
-        cheese: { type: "file", filename: "./app/consoleLog/cheese.log", },
+        error: { type: "file", filename: "./app/consoleLog/error.log", },
         access: { type: "file", filename: "./app/consoleLog/access.log" }
     },
     categories: {
-        default: { appenders: ["cheese"], level: "info" },
+        default: { appenders: ["error"], level: "error" },
         access: { appenders: ["access"], level: "info" }
     }
 });
