@@ -4,9 +4,6 @@ import { Server } from 'http'
 import logger from "./logger";
 import AccessLogMiddleware from "./middleware/AccessLogMiddleware";
 
-import db from './db';
-db()
-
 const app = new Koa();
 app.use(AccessLogMiddleware)
 app.use(router.routes());
