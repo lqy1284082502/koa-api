@@ -3,7 +3,11 @@ import router from './router';
 import { Server } from 'http'
 import logger from "./logger";
 import AccessLogMiddleware from "./middleware/AccessLogMiddleware";
+import {db} from "./db";
 
+db().then(() => {
+    console.log('数据库连接成功');
+});
 const app = new Koa();
 app.use(AccessLogMiddleware)
 app.use(router.routes());

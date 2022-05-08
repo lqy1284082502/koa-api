@@ -24,5 +24,12 @@ const sequelize = new Sequelize(config.db.db_name, config.db.db_user, config.db.
     }
 
 });
-
-export default sequelize;
+const db = async() =>{
+    try {
+        await sequelize.authenticate();
+        console.log('Connection has been established successfully.');
+    }catch (error) {
+        console.error('Unable to connect to the database:', error);
+    }
+}
+export  {sequelize,db};

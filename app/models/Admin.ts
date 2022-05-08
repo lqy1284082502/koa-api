@@ -9,8 +9,8 @@ import {AutoIncrement, Model, Table,PrimaryKey,Column} from "sequelize-typescrip
     collate: "utf8mb4_bin",
 })
 export default class Admin extends Model<Admin> {
-    @AutoIncrement
-    @PrimaryKey
-    @Column
-    id: number | undefined;
+    // @AutoIncrement
+    // @PrimaryKey
+    // @Column
+    // id: number | undefined;
 }
