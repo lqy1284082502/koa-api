@@ -21,5 +21,9 @@ export default {
             access: { appenders: ["access"], level: "info" },
             sql: { appenders: ["sql"], level: "info" }
         }
+    },
+    jwt: {
+        jwt_secret: process.env.JWT_SECRET,
+        jwt_expires_in: process.env.JWT_EXPIRES_IN,
     }
 }
