@@ -1,8 +1,8 @@
 export default {
-    server:{
+    server: {
         APP_PORT: Number(process.env.APP_PORT),
     },
-    db:{
+    db: {
         db_type: process.env.DATABASE_TYPE,
         db_host: process.env.DATABASE_HOST,
         db_port: process.env.DATABASE_PORT,
@@ -10,20 +10,20 @@ export default {
         db_user: process.env.DATABASE_USER || '',
         db_password: process.env.DATABASE_PWD || '',
     },
-    log:{
+    log: {
         appenders: {
-            error: { type: "file", filename: "./app/logs/error.log", },
-            access: { type: "file", filename: "./app/logs/access.log" },
-            sql: { type: "file", filename: "./app/logs/sql.log" }
+            error: { type: 'file', filename: './app/logs/error.log' },
+            access: { type: 'file', filename: './app/logs/access.log' },
+            sql: { type: 'file', filename: './app/logs/sql.log' },
         },
         categories: {
-            default: { appenders: ["error"], level: "error" },
-            access: { appenders: ["access"], level: "info" },
-            sql: { appenders: ["sql"], level: "info" }
-        }
+            default: { appenders: ['error'], level: 'error' },
+            access: { appenders: ['access'], level: 'info' },
+            sql: { appenders: ['sql'], level: 'info' },
+        },
     },
     jwt: {
         jwt_secret: process.env.SECRET_KEY || 'lqy',
         jwt_expires_in: process.env.JWT_EXPIRES_IN || '1h',
-    }
-}
+    },
+};
