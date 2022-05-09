@@ -1,8 +1,12 @@
+import * as fs from 'fs';
 import koaRouter from 'koa-router';
-import LoginController from '../business/user/contorller/LoginController';
-import CheckTokenMiddleware from '../middleware/CheckTokenMiddleware';
-const router = new koaRouter({ prefix: '/user' });
+const router = new koaRouter();
 
-router.post('/login', LoginController.login);
-router.get('/userInfo', CheckTokenMiddleware, LoginController.userInfo);
+fs.readdirSync(__dirname).forEach(async (file) => {
+    if (file !== 'index.ts') {
+        const module = await import('./' + file);
+        router.use(module.default.routes()); // 添加default的作用是到处export default的内容
+    }
+});
+
 export default router;

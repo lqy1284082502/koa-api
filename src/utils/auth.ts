@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import config from '../src/config/config.default';
+import config from '../config/config.default';
 
 function sign(data: any) {
     console.log(config.jwt.jwt_secret);

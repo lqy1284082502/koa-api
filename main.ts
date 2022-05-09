@@ -1,4 +1,5 @@
 import 'dotenv/config';
+require('module-alias/register');
 import config from './src/config/config.default';
 import run from './src';
 

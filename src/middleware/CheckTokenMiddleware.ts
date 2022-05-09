@@ -1,5 +1,5 @@
 import { Context, Next } from 'koa';
-import { verify } from '../../utils/auth';
+import { verify } from '../utils/auth';
 
 export default function (ctx: Context, next: Next) {
     const { authorization } = ctx.header;
