@@ -12,9 +12,9 @@ export default {
     },
     log: {
         appenders: {
-            error: { type: 'file', filename: './app/logs/error.log' },
-            access: { type: 'file', filename: './app/logs/access.log' },
-            sql: { type: 'file', filename: './app/logs/sql.log' },
+            error: { type: 'file', filename: './src/logs/error.log' },
+            access: { type: 'file', filename: './src/logs/access.log' },
+            sql: { type: 'file', filename: './src/logs/sql.log' },
         },
         categories: {
             default: { appenders: ['error'], level: 'error' },

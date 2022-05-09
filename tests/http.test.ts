@@ -1,4 +1,4 @@
-import run from '../app';
+import run from '../src';
 import { Server } from 'http';
 import request from 'supertest';
 
