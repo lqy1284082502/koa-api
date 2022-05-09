@@ -1,7 +1,8 @@
 import koaRouter from 'koa-router';
 import IndexController from "../contorller/IndexController";
-const router = new koaRouter({prefix: '/admin'});
+import LoginController from "../contorller/LoginController";
+const router = new koaRouter({prefix: '/user'});
 
-router.get('/', IndexController.index)
-router.get('/admin', IndexController.admin)
+router.post('/login', LoginController.login);
+router.get('/', IndexController.admin)
 export default router;

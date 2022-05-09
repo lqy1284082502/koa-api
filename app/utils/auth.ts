@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken';
 import config from '../config/config.default';
 
 function sign(data:any){
+    console.log(config.jwt.jwt_secret)
     return jwt.sign(data, config.jwt.jwt_secret as string, { expiresIn: config.jwt.jwt_expires_in });
 }
 
