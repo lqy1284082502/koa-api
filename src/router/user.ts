@@ -1,9 +1,8 @@
 import koaRouter from 'koa-router';
-import LoginController from '../business/user/contorller/LoginController';
-import CheckTokenMiddleware from '../middleware/CheckTokenMiddleware';
+import UserController from '../business/user/contorller/UserController';
+// import CheckTokenMiddleware from '../middleware/CheckTokenMiddleware';
 const router = new koaRouter({ prefix: '/user' });
 
-router.post('/login', LoginController.login);
-router.get('/userInfo', CheckTokenMiddleware, LoginController.userInfo);
+router.post('/register', UserController.register);
 
 export default router;
