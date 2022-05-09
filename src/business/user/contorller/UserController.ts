@@ -13,6 +13,20 @@ class UserController implements UserImp {
         };
         return ctx;
     }
+
+    async getUserInfo(ctx: Context, next: Next): Promise<Context> {
+        return ctx;
+    }
+    async login(ctx: Context, next: Next): Promise<Context> {
+        return ctx;
+    }
+
+    async logout(ctx: Context, next: Next): Promise<Context> {
+        return ctx;
+    }
+    async updateUserInfo(ctx: Context, next: Next): Promise<Context> {
+        return ctx;
+    }
 }
 
 export default new UserController();
