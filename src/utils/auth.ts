@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 import config from '../config/config.default';
 
 function sign(data) {
-    return jwt.sign({ data }, config.jwt.jwt_secret, { expiresIn: '3h' });
+    return jwt.sign({ data }, config.jwt.jwt_secret, { expiresIn: config.jwt.jwt_expires_in });
 }
 
 function verify(token: string) {
