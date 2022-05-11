@@ -22,11 +22,11 @@ const AppDataSource = new DataSource({
 
 AppDataSource.initialize()
     .then(() => {
-        accessLogger.log('数据库连接成功');
+        accessLogger.info('数据库连接成功');
         console.log('数据库连接成功');
     })
     .catch((error) => {
-        accessLogger.log('数据库连接失败', error);
+        accessLogger.info('数据库连接失败', error);
         console.log('数据库连接成功');
     });
 
