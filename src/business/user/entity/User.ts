@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Model } from './Model';
 
 @Entity()
 export class User {
@@ -6,11 +7,23 @@ export class User {
     id: number;
 
     @Column()
-    firstName: string;
+    name: string;
 
     @Column()
-    lastName: string;
+    password: string;
 
-    @Column()
-    age: number;
+    @Column({ default: 0 })
+    status: number;
+
+    // @OneToMany(() => Model, (model) => model.users)
+    // models: Model[];
+
+    @Column({ default: '1284082502@qq.com' })
+    email: string;
+
+    @Column({ name: 'created_at', default: '' })
+    createdAt: string;
+
+    @Column({ name: 'updated_at', default: '' })
+    updatedAt: string;
 }

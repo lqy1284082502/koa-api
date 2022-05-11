@@ -12,20 +12,22 @@ const AppDataSource = new DataSource({
     username: config.db.db_user,
     password: config.db.db_password,
     database: config.db.db_name,
-    synchronize: true,
     logging: true,
     logger: new DbLogger(), // 自定义logger
     entities: [path.join(__dirname, '..', 'business/**/entity/*{.ts,.js}')],
     migrations: [],
     subscribers: [],
+    synchronize: true,
 });
 
 AppDataSource.initialize()
     .then(() => {
         accessLogger.log('数据库连接成功');
+        console.log('数据库连接成功');
     })
     .catch((error) => {
         accessLogger.log('数据库连接失败', error);
+        console.log('数据库连接成功');
     });
 
 export { AppDataSource };

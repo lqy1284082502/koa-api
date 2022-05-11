@@ -24,6 +24,6 @@ export default {
     },
     jwt: {
         jwt_secret: process.env.SECRET_KEY || 'lqy',
-        jwt_expires_in: process.env.JWT_EXPIRES_IN || '1h',
+        jwt_expires_in: process.env.JWT_EXPIRES_IN || '24h',
     },
 };

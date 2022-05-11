@@ -1,28 +1,45 @@
-import { Context, Next } from 'koa';
+import Application from 'koa';
+import IUserController from './IUserController';
+import { User } from '../entity/User';
+import UserService from '../service/UserService';
 import { sign } from '../../../utils/auth';
-import UserImp from '../Interface/UserImp';
-import AdminService from '../service/adminService';
-class UserController implements UserImp {
-    async register(ctx: Context, next: Next): Promise<Context> {
-        const data = await AdminService.getAdmin();
+
+class UserController implements IUserController {
+    async register(ctx: Application.Context): Promise<Application.Context> {
+        const { username, password } = ctx.request['body'];
+        const user = new User();
+        user.name = username;
+        user.password = password;
+        user.createdAt = new Date().toString();
+        const result = await UserService.addUser(user);
         ctx.body = {
             code: 200,
-            data,
+            data: result,
+            msg: '用户注册成功',
         };
         return ctx;
     }
 
-    async getUserInfo(ctx: Context, next: Next): Promise<Context> {
-        return ctx;
-    }
-    async login(ctx: Context, next: Next): Promise<Context> {
+    async login(ctx: Application.Context): Promise<Application.Context> {
+        const { username } = ctx.request['body'];
+        const token = sign(username);
+        ctx.body = {
+            code: 200,
+            data: {
+                token,
+            },
+        };
         return ctx;
     }
 
-    async logout(ctx: Context, next: Next): Promise<Context> {
-        return ctx;
-    }
-    async updateUserInfo(ctx: Context, next: Next): Promise<Context> {
+    async getAllUserInfo(ctx: Application.Context): Promise<Application.Context> {
+        const result = await UserService.getUserList();
+        ctx.body = {
+            code: 200,
+            data: {
+                list: result,
+            },
+        };
         return ctx;
     }
 }
