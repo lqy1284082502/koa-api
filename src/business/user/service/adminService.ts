@@ -5,9 +5,7 @@ import { User } from '../entity/User';
 class AdminService {
     async getAdmin() {
         const userRepository = await AppDataSource.getRepository(User);
-        const allUser = await userRepository.find();
-        console.log(allUser);
-        return 'adminServer链接成功';
+        return await userRepository.find();
     }
 }
 

@@ -1,32 +1,30 @@
 import { Logger, QueryRunner } from 'typeorm';
 
+// TODO: Add logger to database
+
 export class DbLogger implements Logger {
-    log(level: 'log' | 'info' | 'warn', message: any, queryRunner?: QueryRunner): any {
-        return '';
+    // 日志
+    log(level: 'log' | 'info' | 'warn', message: string, queryRunner?: QueryRunner): void {
+        console.log(`${level}: ${message}: ${queryRunner}`);
     }
-
-    logMigration(message: string, queryRunner?: QueryRunner): any {
+    // 日志迁移
+    logMigration(message: string, queryRunner?: QueryRunner): void {
         //console.log(message, queryRunner);
-        return '';
     }
-
-    logQuery(query: string, parameters?: any[], queryRunner?: QueryRunner): any {
+    // 日志查询
+    logQuery(query: string, parameters?: any[], queryRunner?: QueryRunner): void {
         //console.log(parameters, queryRunner);
-        return '';
     }
-
-    logQueryError(error: string | Error, query: string, parameters?: any[], queryRunner?: QueryRunner): any {
+    // 日志查询错误
+    logQueryError(error: string | Error, query: string, parameters?: any[], queryRunner?: QueryRunner): void {
         //console.log(parameters, queryRunner);
-        return '';
     }
-
-    logQuerySlow(time: number, query: string, parameters?: any[], queryRunner?: QueryRunner): any {
+    // 日志查询速度慢
+    logQuerySlow(time: number, query: string, parameters?: any[], queryRunner?: QueryRunner): void {
         //console.log(parameters, queryRunner);
-        return '';
     }
-
-    logSchemaBuild(message: string, queryRunner?: QueryRunner): any {
+    // 日志事务
+    logSchemaBuild(message: string, queryRunner?: QueryRunner): void {
         //console.log(message, queryRunner);
-        return '';
     }
 }
