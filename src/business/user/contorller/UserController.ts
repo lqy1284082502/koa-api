@@ -1,15 +1,13 @@
 import { Context, Next } from 'koa';
 import { sign } from '../../../utils/auth';
 import UserImp from '../Interface/UserImp';
+import AdminService from '../service/adminService';
 class UserController implements UserImp {
     async register(ctx: Context, next: Next): Promise<Context> {
+        const data = await AdminService.getAdmin();
         ctx.body = {
-            id: 1,
             code: 200,
-            message: 'success',
-            data: {
-                token: '123sdfsdf',
-            },
+            data,
         };
         return ctx;
     }

@@ -1,8 +1,13 @@
-import Admin from '../models/Admin';
+import { AppDataSource } from '../../../db/typeORM';
+import { AdminEntity } from '../entity/AdminEntity';
+import { User } from '../entity/User';
 
 class AdminService {
-    getAdmin() {
-        return Admin.findOne();
+    async getAdmin() {
+        const userRepository = await AppDataSource.getRepository(User);
+        const allUser = await userRepository.find();
+        console.log(allUser);
+        return 'adminServer链接成功';
     }
 }
 

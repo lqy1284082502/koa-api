@@ -5,11 +5,7 @@ import { Server } from 'http';
 import logger from './logger';
 import koaBody from 'koa-body';
 import AccessLogMiddleware from './middleware/AccessLogMiddleware';
-import { db } from './db';
 
-db().then(() => {
-    console.log('数据库连接成功');
-});
 const app = new Koa();
 
 app.use(koaBody());
