@@ -8,7 +8,7 @@ const swaggerDefinition = {
     info: {
         title: 'Test API', //文档标题
         version: 'v1', //版本号
-        host: 'localhost:3001', //服务器地址
+        host: 'localhost:8080', //服务器地址
         basePath: '/', //访问地址，有些人喜欢在host:port/api/xxx这种格式，可以在此处配置为/api/.
     },
 };
